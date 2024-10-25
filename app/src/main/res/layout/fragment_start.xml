@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:gravity="center"
+    tools:context=".ui.StartFragment">
+
+    <TextView
+        android:id="@+id/tv_initial_city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       style="@style/mStyle"
+        android:text="@string/city"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25" />
+
+    <EditText
+        android:id="@+id/et_city"
+        android:autofillHints="City"
+        android:textSize="24sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="32.dp"
+        android:hint="@string/city"
+        android:inputType="text"
+        android:imeOptions="actionDone"
+        android:maxEms="20"
+        android:maxLines="1"
+        android:singleLine="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_initial_city" />
+    <Button
+        android:id="@+id/btn_next"
+        android:text="@string/next"
+        android:enabled="false"
+        android:layout_marginVertical="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_city"/>
+
+    <TextView
+        android:id="@+id/linLeft"
+        android:layout_width="0dp"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:text="@string/lineee"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tvOr"
+        app:layout_constraintTop_toTopOf="@id/tvOr"/>
+    <TextView
+        android:id="@+id/tvOr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginVertical="52dp"
+        android:text="@string/or"
+        app:layout_constraintStart_toEndOf="@id/linLeft"
+        app:layout_constraintEnd_toStartOf="@+id/linRight"
+        app:layout_constraintTop_toBottomOf="@id/btn_next"/>
+    <TextView
+        android:id="@+id/linRight"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/lineee"
+        app:layout_constraintStart_toEndOf="@id/tvOr"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvOr"/>
+    <Button
+        android:id="@+id/btnLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="50.dp"
+        android:text="@string/use_my_location"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvOr"/>
+
+    <ProgressBar
+        android:id="@+id/progress_circular"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
